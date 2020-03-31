@@ -10,13 +10,14 @@
  *  i jakie ma glowne cechy.
  */
 class Macierz {
+    Wektor kolumny[ROZMIAR];
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich pol i metod prywatnych
    */
   public:
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich metod publicznych
-   */    
+   */
 };
 
 
@@ -25,7 +26,7 @@ class Macierz {
  * danych akceptuje. Jakie jest znaczenie parametrow itd.
  * Szczegoly dotyczace zalecen realizacji opisow mozna
  * znalezc w pliku:
- *    ~bk/edu/kpo/zalecenia.txt 
+ *    ~bk/edu/kpo/zalecenia.txt
  */
 std::istream& operator >> (std::istream &Strm, Macierz &Mac);
 
@@ -34,7 +35,7 @@ std::istream& operator >> (std::istream &Strm, Macierz &Mac);
  * danych akceptuje. Jakie jest znaczenie parametrow itd.
  * Szczegoly dotyczace zalecen realizacji opisow mozna
  * znalezc w pliku:
- *    ~bk/edu/kpo/zalecenia.txt 
+ *    ~bk/edu/kpo/zalecenia.txt
  */
 std::ostream& operator << (std::ostream &Strm, const Macierz &Mac);
 
