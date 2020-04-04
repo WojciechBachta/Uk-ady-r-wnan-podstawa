@@ -3,7 +3,8 @@
 
 #include "rozmiar.h"
 #include <iostream>
-#include <iomainp>
+//#include <iomainp>
+using namespace std;
 
 
 /*
@@ -11,21 +12,40 @@
  *  i jakie ma glowne cechy.
  */
 class Wektor {
-    double skladowa[ROZMIAR]
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich pol i metod prywatnych
    */
-  public:
-    double getSkladowa(unsigned int index){
-        return skladowa[index];
-    }
-    void setskladowa(unsigned int index, double wartosc){
-        skladowa[index]=wartosc;
-    }
+
+
+   double _SkladnikiW[ROZMIAR];
+
+
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich metod publicznych
    */
+
+
+   public:
+
+    double Wez(unsigned int index)const {
+        return _SkladnikiW[index];
+    }
+    void Zamien(unsigned int index, double wartosc){
+        _SkladnikiW[index]=wartosc;
+    }
+
+    double operator[](int Ind) const {return _SkladnikiW[Ind];}
+    double& operator[](int Ind) {return _SkladnikiW[Ind];}
+
+
 };
+
+Wektor operator + (Wektor W, Wektor Z);
+Wektor operator - (Wektor W, Wektor Z);
+int operator * (Wektor W, Wektor Z);
+Wektor operator * (Wektor W, double Z);
+Wektor operator / (Wektor W, double Z);
+
 
 
 /*

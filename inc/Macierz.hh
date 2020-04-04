@@ -4,20 +4,30 @@
 #include "rozmiar.h"
 #include <iostream>
 
+#include "Wektor.hh"
+using namespace std;
 
 /*
  *  Tutaj trzeba opisac klase. Jakie pojecie modeluje ta klasa
  *  i jakie ma glowne cechy.
  */
 class Macierz {
-    Wektor kolumny[ROZMIAR];
+
+    Wektor _SkladnikiM[ROZMIAR];
+
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich pol i metod prywatnych
    */
   public:
+   Wektor WezWiersz(int wiersz){
+   return _SkladnikiM[wiersz];
+   }
+
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich metod publicznych
    */
+   //double WezElem(int i, int j);
+
 };
 
 
@@ -37,7 +47,7 @@ std::istream& operator >> (std::istream &Strm, Macierz &Mac);
  * znalezc w pliku:
  *    ~bk/edu/kpo/zalecenia.txt
  */
-std::ostream& operator << (std::ostream &Strm, const Macierz &Mac);
+std::ostream& operator << (std::ostream &Strm, Macierz &Mac);
 
 
 #endif
