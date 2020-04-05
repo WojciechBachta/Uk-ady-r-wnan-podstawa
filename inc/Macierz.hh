@@ -19,9 +19,11 @@ class Macierz {
    *  Tutaj trzeba wstawic definicje odpowiednich pol i metod prywatnych
    */
   public:
-   Wektor WezWiersz(int wiersz){
+   Wektor WezWiersz(int wiersz)const{
    return _SkladnikiM[wiersz];
    }
+    const Wektor & operator[] (int index) const;
+    Wektor & operator[] (int index);
 
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich metod publicznych
@@ -47,7 +49,7 @@ std::istream& operator >> (std::istream &Strm, Macierz &Mac);
  * znalezc w pliku:
  *    ~bk/edu/kpo/zalecenia.txt
  */
-std::ostream& operator << (std::ostream &Strm, Macierz &Mac);
+std::ostream& operator << (std::ostream &Strm, const Macierz &Mac);
 
 
 #endif

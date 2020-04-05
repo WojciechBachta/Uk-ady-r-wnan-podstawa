@@ -37,14 +37,20 @@ class Wektor {
     double operator[](int Ind) const {return _SkladnikiW[Ind];}
     double& operator[](int Ind) {return _SkladnikiW[Ind];}
 
+    const Wektor operator + (const Wektor &W) const;
+    const Wektor operator - (const Wektor &W) const;
+    const Wektor operator * (double Z) const;
+    double operator * (const Wektor &W) const;
+    const Wektor operator / (double Z) const;
+
 
 };
 
-Wektor operator + (Wektor W, Wektor Z);
-Wektor operator - (Wektor W, Wektor Z);
-int operator * (Wektor W, Wektor Z);
-Wektor operator * (Wektor W, double Z);
-Wektor operator / (Wektor W, double Z);
+//Wektor operator + (const Wektor W, const Wektor Z);
+//Wektor operator - (const Wektor W, const Wektor Z);
+//double operator * (const Wektor W, const Wektor Z);
+//Wektor operator * (const Wektor W, const double Z);
+//Wektor operator / (const Wektor W, const double Z);
 
 
 
