@@ -1,4 +1,6 @@
 #include "Wektor.hh"
+#include <cmath>
+#include <iostream>
 using namespace std;
 
 /*
@@ -22,56 +24,71 @@ using namespace std;
 
     std::ostream& operator << (std::ostream &Strm, const Wektor &Wek)
     {
-        Strm << "[" << Wek.Wez(0) << ',' << Wek.Wez(1) << ',' << Wek.Wez(2) << "]";
+        Strm << "[" << Wek.Wez(0);
+        for(int i=1; i<ROZMIAR; i++)
+        {
+            Strm << ", " << Wek.Wez(i);
+        }
+        Strm << "]";
         return Strm;
     }
-/*
+
     std::istream& operator >> (std::istream &Strm, Wektor &Wek)
     {
-        Strm >> Wek.Wez(0) >> Wek.Wez(1) >> Wek.Wez(2);
+        for(int i = 0; i < ROZMIAR; i++)
+        {
+            Strm >> Wek[i];
+        }
         return Strm;
     }
-*/
-    Wektor operator + (Wektor W, Wektor Z)
+
+
+    const Wektor Wektor::operator + (const Wektor &W) const
     {
         Wektor Wynik;
-        Wynik.Zamien(0,W.Wez(0)+Z.Wez(0));
-        Wynik.Zamien(1,W.Wez(1)+Z.Wez(1));
-        Wynik.Zamien(2,W.Wez(2)+Z.Wez(2));
-    return Wynik;
-    }
-
-    Wektor operator - (Wektor W, Wektor Z)
-    {
-        Wektor Wynik;
-        Wynik.Zamien(0,W.Wez(0)-Z.Wez(0));
-        Wynik.Zamien(1,W.Wez(1)-Z.Wez(1));
-        Wynik.Zamien(2,W.Wez(2)-Z.Wez(2));
-    return Wynik;
-    }
-
-    int operator * (Wektor W, Wektor Z)
-    {
-        int Wynik = (W.Wez(0)*Z.Wez(0)+W.Wez(1)*Z.Wez(1)+W.Wez(2)*Z.Wez(2));
+        for(int i=0; i<ROZMIAR; i++)
+        {
+            Wynik._SkladnikiW[i] = this->_SkladnikiW[i] + W._SkladnikiW[i];
+        }
         return Wynik;
     }
 
-    Wektor operator * (Wektor W, double Z)
+    const Wektor Wektor::operator - (const Wektor & W) const
+      {
+        Wektor Wynik;
+        for(int i=0; i<ROZMIAR; i++)
+        {
+            Wynik._SkladnikiW[i] = this->_SkladnikiW[i] - W._SkladnikiW[i];
+        }
+        return Wynik;
+    }
+    const Wektor Wektor::operator * (double Z) const
     {
         Wektor Wynik;
-        Wynik.Zamien(0,W.Wez(0)*Z);
-        Wynik.Zamien(1,W.Wez(1)*Z);
-        Wynik.Zamien(2,W.Wez(2)*Z);
-    return Wynik;
+        for(int i=0; i<ROZMIAR; i++)
+        {
+            Wynik._SkladnikiW[i] = this->_SkladnikiW[i] *Z;
+        }
+        return Wynik;
     }
 
-    Wektor operator / (Wektor W, double Z)
+    double Wektor::operator * (const Wektor &W) const
+    {
+        double Wynik;
+        for(int i=0; i<ROZMIAR; i++)
+        {
+            Wynik = Wynik + this->_SkladnikiW[i] * W._SkladnikiW[i];
+        }
+        return Wynik;
+    }
+
+    const Wektor Wektor::operator / (double Z) const
     {
         Wektor Wynik;
-        Wynik.Zamien(0,W.Wez(0)/Z);
-        Wynik.Zamien(1,W.Wez(1)/Z);
-        Wynik.Zamien(2,W.Wez(2)/Z);
-    return Wynik;
+        for(int i=0; i<ROZMIAR; i++)
+        {
+            Wynik._SkladnikiW[i] = this->_SkladnikiW[i] /Z;
+        }
+        return Wynik;
     }
-
 

@@ -15,11 +15,45 @@ using namespace std;
 
 
 
- std::ostream& operator << (std::ostream &Strm, Macierz &Mac)
+ std::ostream& operator << (std::ostream &Strm, const Macierz &Mac)
  {
-    Strm << Mac.WezWiersz(0) << endl << Mac.WezWiersz(0) << endl << Mac.WezWiersz(0);
-    return Strm;
+    Wektor W;
+    for(int i = 0; i < ROZMIAR; i++)
+    {
+        Strm << Mac[i] << "\n";
+    }
  }
+
+ std::istream& operator >> (std::istream &Strm, Macierz &Mac)
+ {
+    for(int i=0; i<ROZMIAR; i++)
+    {
+        Strm >> Mac[i];
+    }
+
+ }
+
+const Wektor & Macierz::operator[] (int index) const
+{
+    if (index < 0 || index > ROZMIAR)
+    {
+        std::cerr << "indeks poza zakresem\n";
+        exit(1);
+    }
+    return (this->_SkladnikiM[index]);
+}
+
+Wektor & Macierz::operator[] (int index)
+{
+    if (index < 0 || index > ROZMIAR)
+    {
+        std::cerr << "indeks poza zakresem\n";
+        exit(1);
+    }
+    return (this->_SkladnikiM[index]);
+}
+
+
 /*
  std::istream& operator >> (std::istream &Strm, Macierz &Mac)
  {

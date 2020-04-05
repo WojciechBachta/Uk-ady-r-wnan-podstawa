@@ -28,11 +28,10 @@ int main()
   cout << endl << " Start programu " << endl << endl;
 
 
-/*
+
   Wektor W;
   Wektor Z;
   Wektor Y;
-
 
 
   W.Zamien(0, 3);
@@ -47,23 +46,20 @@ int main()
   Y.Zamien(1, 0);
   Y.Zamien(2, 0);
 
-    int x=4;
-    double z=5/3;
-    Y=W/z;
-*/
+    Y=Z+W;
+cout << Y << endl;
+Y=Z-W;
+cout << Y << endl;
+double x;
+x=Z*W;
+cout << x << endl;
+Y=Z*3;
+cout << Y << endl;
+Y=Z/3;
+cout << Y << endl;
 
-
-
-
-
-
-Macierz M;
-
-
-double z=6/5;
-
-cout << z << endl;
-
+Macierz Mac;
+cout << Mac << endl;
 
 
 
