@@ -34,18 +34,18 @@ int main()
   Wektor Y;
 
 
-  W.Zamien(0, 3);
-  W.Zamien(1, 8);
-  W.Zamien(2, 4);
+  W.Zamien(0, 1);
+  W.Zamien(1, 2);
+  W.Zamien(2, 3);
 
-  Z.Zamien(0, 5);
-  Z.Zamien(1, 0);
-  Z.Zamien(2, 4);
+  Z.Zamien(0, 4);
+  Z.Zamien(1, 5);
+  Z.Zamien(2, 6);
 
   Y.Zamien(0, 0);
   Y.Zamien(1, 0);
   Y.Zamien(2, 0);
-
+/*
     Y=Z+W;
 cout << Y << endl;
 Y=Z-W;
@@ -60,9 +60,29 @@ cout << Y << endl;
 
 Macierz Mac;
 cout << Mac << endl;
+*/
+cout << "Wektory" << endl;
+cout << W << endl;
+cout << Z << endl;
+cout << "Iloczyn wektorowy:" << endl;
+Y=W*Z;
+
+cout << Y << endl;
+cout << endl;
+cout << endl;
+cout << "Macierz" << endl;
 
 
+Macierz Wynik;
+Wynik.ZamienWiersz(0, W);
+Wynik.ZamienWiersz(1, Z);
+Wynik.ZamienWiersz(2, W);
 
+cout << Wynik << endl;
+cout << "Macierz do kwadratu:" << endl;
+
+Wynik = *Wynik;
+cout << Wynik << endl;
 
 
 }
