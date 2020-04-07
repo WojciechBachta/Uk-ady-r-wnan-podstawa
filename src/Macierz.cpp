@@ -15,6 +15,21 @@ using namespace std;
 
 
 
+ //MODYFIKACJA
+/*
+const Macierz Macierz::operator * (const Macierz &M) const
+{
+    Macierz Wynik;
+    for(int i=0; i<ROZMIAR; i++)
+    {
+        for(int j=0; j<ROZMIAR; j++)
+        Wynik._SkladnikiM[i]._SkladnikiW[j]=Wektor._SkladnikiM[i]._SkladnikiW[j]*Wektor._SkladnikiM[i]._SkladnikiW[j]
+    }
+    return Wynik;
+
+}
+
+*/
 
 
  std::ostream& operator << (std::ostream &Strm, const Macierz &Mac)
@@ -56,3 +71,11 @@ Wektor & Macierz::operator[] (int index)
 }
 
 
+/*
+ std::istream& operator >> (std::istream &Strm, Macierz &Mac)
+ {
+    Strm >> Mac.WezWiersz(0) >> Mac.WezWiersz(0) >> Mac.WezWiersz(0);
+    return Strm;
+
+ }
+*/

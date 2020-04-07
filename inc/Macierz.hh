@@ -24,7 +24,7 @@ class Macierz {
    }
     const Wektor & operator[] (int index) const;
     Wektor & operator[] (int index);
-
+    const Macierz operator * (const Macierz &M) const;
 
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich metod publicznych

@@ -10,6 +10,16 @@ using namespace std;
  *  Mniejsze metody mozna definiwac w ciele klasy.
  */
 
+//Modyfikacja
+
+ const Wektor Wektor::operator * (const Wektor &W)
+ {
+    Wektor Wynik;
+    Wynik._SkladnikiW[0]=this->_SkladnikiW[1]*W._SkladnikiW[2]-this->_SkladnikiW[2]*W._SkladnikiW[1];
+    Wynik._SkladnikiW[1]=(this->_SkladnikiW[0]*W._SkladnikiW[2]-this->_SkladnikiW[2]*W._SkladnikiW[0])*(-1);
+    Wynik._SkladnikiW[2]=this->_SkladnikiW[0]*W._SkladnikiW[1]-this->_SkladnikiW[1]*W._SkladnikiW[0];
+    return Wynik;
+ }
 
 
 

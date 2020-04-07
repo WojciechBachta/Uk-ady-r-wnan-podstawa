@@ -61,11 +61,22 @@ cout << Y << endl;
 Macierz Mac;
 cout << Mac << endl;
 */
+cout << W << endl;
+cout << Z << endl;
+cout << "Iloczyn wektorowy:" << endl;
+Y=W*Z;
+
+cout << Y << endl;
 
 
+Macierz Wynik;
 
-
-
+   /* for(int i=0; i<ROZMIAR; i++)
+    {
+        for(int j=0; j<ROZMIAR; j++)
+        Wynik._SkladnikiM._SkladnikiW[i]=0;
+    }
+*/
 
 
 

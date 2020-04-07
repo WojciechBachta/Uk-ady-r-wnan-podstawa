@@ -42,6 +42,7 @@ class Wektor {
     const Wektor operator * (double Z) const;
     double operator * (const Wektor &W) const;
     const Wektor operator / (double Z) const;
+    const Wektor operator * (const Wektor &W);
 
 
 };
