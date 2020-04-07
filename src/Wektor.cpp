@@ -10,17 +10,16 @@ using namespace std;
  *  Mniejsze metody mozna definiwac w ciele klasy.
  */
 
-//Modyfikacja
-
- const Wektor Wektor::operator * (const Wektor &W)
- {
-    Wektor Wynik;
-    Wynik._SkladnikiW[0]=this->_SkladnikiW[1]*W._SkladnikiW[2]-this->_SkladnikiW[2]*W._SkladnikiW[1];
-    Wynik._SkladnikiW[1]=(this->_SkladnikiW[0]*W._SkladnikiW[2]-this->_SkladnikiW[2]*W._SkladnikiW[0])*(-1);
-    Wynik._SkladnikiW[2]=this->_SkladnikiW[0]*W._SkladnikiW[1]-this->_SkladnikiW[1]*W._SkladnikiW[0];
-    return Wynik;
- }
-
+/*
+    void Wektor::Dodaj(Wektor& W)
+    {
+        Wektor Z;
+        Z._Skladniki[0]=_Skladniki[0]+W.Wez(0);
+        Z._Skladniki[1]=_Skladniki[1]+W.Wez(1);
+        Z._Skladniki[2]=_Skladniki[2]+W.Wez(2);
+        return Z;
+    }
+*/
 
 
     std::ostream& operator << (std::ostream &Strm, const Wektor &Wek)

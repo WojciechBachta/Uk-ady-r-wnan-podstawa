@@ -19,22 +19,11 @@ class Macierz {
    *  Tutaj trzeba wstawic definicje odpowiednich pol i metod prywatnych
    */
   public:
-
-
    Wektor WezWiersz(int wiersz)const{
    return _SkladnikiM[wiersz];
    }
-   void ZamienWiersz(int wiersz, Wektor W){
-    _SkladnikiM[wiersz]=W;
-   }
-    const Wektor & operator[] (int index) const{
-    return _SkladnikiM[index];
-    }
-    Wektor & operator[] (int index){
-    return _SkladnikiM[index];
-    }
-
-    const Macierz operator * () const;
+    const Wektor & operator[] (int index) const;
+    Wektor & operator[] (int index);
 
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich metod publicznych
