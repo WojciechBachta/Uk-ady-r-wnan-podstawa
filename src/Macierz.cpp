@@ -23,11 +23,11 @@ const Macierz Macierz::operator * () const
     for(int i=0; i<ROZMIAR; i++)
     {
         for(int j=0; j<ROZMIAR; j++)
-        Wynik._SkladnikiM[i]._SkladnikiW[j]=this->_SkladnikiM[i]._SkladnikiW[j]*this->_SkladnikiM[i]._SkladnikiW[j];
+        Wynik._SkladnikiM[i][j]=this->_SkladnikiM[i][j]*this->_SkladnikiM[i][j];
     }
     return Wynik;
-
 }
+
 
 // Wektor._SkladnikiM[i]._SkladnikiW[j]*Wektor._SkladnikiM[i]._SkladnikiW[j]
 

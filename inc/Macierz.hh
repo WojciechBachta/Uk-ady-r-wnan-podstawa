@@ -13,13 +13,13 @@ using namespace std;
  */
 class Macierz {
 
-
+    Wektor _SkladnikiM[ROZMIAR];
 
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich pol i metod prywatnych
    */
   public:
-    Wektor _SkladnikiM[ROZMIAR];
+
 
    Wektor WezWiersz(int wiersz)const{
    return _SkladnikiM[wiersz];
@@ -28,10 +28,10 @@ class Macierz {
     _SkladnikiM[wiersz]=W;
    }
     const Wektor & operator[] (int index) const{
-    return (this->_SkladnikiM[index]);
+    return _SkladnikiM[index];
     }
     Wektor & operator[] (int index){
-    return (this->_SkladnikiM[index]);
+    return _SkladnikiM[index];
     }
 
     const Macierz operator * () const;
