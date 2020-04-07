@@ -61,23 +61,28 @@ cout << Y << endl;
 Macierz Mac;
 cout << Mac << endl;
 */
+cout << "Wektory" << endl;
 cout << W << endl;
 cout << Z << endl;
 cout << "Iloczyn wektorowy:" << endl;
 Y=W*Z;
 
 cout << Y << endl;
+cout << endl;
+cout << endl;
+cout << "Macierz" << endl;
 
 
 Macierz Wynik;
+Wynik.ZamienWiersz(0, W);
+Wynik.ZamienWiersz(1, Z);
+Wynik.ZamienWiersz(2, W);
 
-   /* for(int i=0; i<ROZMIAR; i++)
-    {
-        for(int j=0; j<ROZMIAR; j++)
-        Wynik._SkladnikiM._SkladnikiW[i]=0;
-    }
-*/
+cout << Wynik << endl;
+cout << "Macierz do kwadratu:" << endl;
 
+Wynik = *Wynik;
+cout << Wynik << endl;
 
 
 }

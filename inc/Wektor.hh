@@ -17,7 +17,6 @@ class Wektor {
    */
 
 
-   double _SkladnikiW[ROZMIAR];
 
 
   /*
@@ -26,6 +25,7 @@ class Wektor {
 
 
    public:
+    double _SkladnikiW[ROZMIAR];
 
     double Wez(unsigned int index)const {
         return _SkladnikiW[index];
