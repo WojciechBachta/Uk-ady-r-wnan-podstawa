@@ -16,8 +16,7 @@ class Wektor {
    *  Tutaj trzeba wstawic definicje odpowiednich pol i metod prywatnych
    */
 
-
-   double _SkladnikiW[ROZMIAR];
+    double _SkladnikiW[ROZMIAR];
 
 
   /*
@@ -26,6 +25,7 @@ class Wektor {
 
 
    public:
+
 
     double Wez(unsigned int index)const {
         return _SkladnikiW[index];
@@ -42,15 +42,13 @@ class Wektor {
     const Wektor operator * (double Z) const;
     double operator * (const Wektor &W) const;
     const Wektor operator / (double Z) const;
+    const Wektor operator * (const Wektor &W);
+
+    double dlugosc() const;
 
 
 };
 
-//Wektor operator + (const Wektor W, const Wektor Z);
-//Wektor operator - (const Wektor W, const Wektor Z);
-//double operator * (const Wektor W, const Wektor Z);
-//Wektor operator * (const Wektor W, const double Z);
-//Wektor operator / (const Wektor W, const double Z);
 
 
 
